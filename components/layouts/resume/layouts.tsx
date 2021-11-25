@@ -4,7 +4,7 @@ import Head from 'next/head'
 import Script from 'next/script'
 import Spinner from '../../spinners/default_spinner'
 // import $ from 'jquery'
-class ResumeDefault extends React.Component {
+class ResumeDefault extends React.Component<{}, { showSpinner: Boolean }> {
     constructor(props: any) {
         super(props);
         this.state = {
