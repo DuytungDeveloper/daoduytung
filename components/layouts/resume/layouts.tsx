@@ -21,8 +21,8 @@ class ResumeDefault extends React.Component<{}, { showSpinner: Boolean }> {
         return (
             <>
                 <Head>
-                    <title>Đào Duy Tùng - Web Developer</title>
-                    <meta name="description" content="Đào Duy Tùng,lập trình viên, WebDeveloper, Dev, Web" />
+                    <title>Đào Duy Tùng - Software Engineer</title>
+                    <meta name="description" content="Đào Duy Tùng, Software Engineer,lập trình viên, WebDeveloper, Web Developer, Dev, Web" />
                     <link rel="icon" href="/favicon.ico" />
                     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
                     <link rel="stylesheet" href="/assets/css/reset.css" type="text/css" />
@@ -31,10 +31,6 @@ class ResumeDefault extends React.Component<{}, { showSpinner: Boolean }> {
                     <link rel="stylesheet" href="/assets/css/perfect-scrollbar.css" type="text/css" />
                     <link rel="stylesheet" href="/assets/css/owl.carousel.css" type="text/css" />
                     <link rel="stylesheet" href="/assets/css/magnific-popup.css" type="text/css" />
-                    {/* <link rel="stylesheet" href="/assets/css/main.css" type="text/css" /> */}
-
-
-                    {/* <Script src="/assets/js/main.js" ></Script> */}
 
                 </Head>
                 {/* <div className="lm-animated-bg" style={{ backgroundImage: "url(/assets/img/main_bg.png)" }}></div> */}
