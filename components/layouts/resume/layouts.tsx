@@ -25,6 +25,9 @@ class ResumeDefault extends React.Component<{}, { showSpinner: Boolean }> {
                     <meta name="description" content="Đào Duy Tùng, Software Engineer,lập trình viên, WebDeveloper, Web Developer, Dev, Web" />
                     <link rel="icon" href="/favicon.ico" />
                     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+                    <link rel="apple-touch-icon" href="/favicon.ico"/>
+                    <link rel="manifest" href="/manifest.json"/>
+                    
                     <link rel="stylesheet" href="/assets/css/reset.css" type="text/css" />
                     <link rel="stylesheet" href="/assets/css/bootstrap-grid.min.css" type="text/css" />
                     <link rel="stylesheet" href="/assets/css/animations.css" type="text/css" />
