@@ -467,7 +467,8 @@ var PageTransitions = (function ($, options) {
         // This will get the nav-anim elements parent wrapper div
         var $pageWrapper = sectionsContainer,
             currentPageId = $pageWrapper.data('current'), tempPageIndex,
-            linkhref = $pageTrigger.attr('href').split("#"),
+            // linkhref = $pageTrigger.attr('href').split("#"),
+            linkhref = $pageTrigger.attr('href'),
             gotoPage = linkhref[1];
             
             tempPageIndex = currentPageId;
