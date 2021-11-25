@@ -55,7 +55,7 @@ export default function Header(props: any) {
         <header id="site_header" className="header mobile-menu-hide">
             <div className="header-content">
                 <div className="header-photo">
-                    <img src="/assets/img/main_photo.jpg" alt="Đào Duy Tùng"/>
+                    <img src="/assets/img/main_photo.jpg" alt="Đào Duy Tùng" loading={'lazy'}/>
                 </div>
                 <div className="header-titles">
                     <h2>Đào Duy Tùng</h2>
