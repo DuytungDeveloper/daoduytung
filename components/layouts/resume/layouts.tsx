@@ -21,21 +21,21 @@ class ResumeDefault extends React.Component<{}, { showSpinner: Boolean }> {
         return (
             <>
                 <Head>
-                    <meta charSet="utf-8"/>
+                    <meta charSet="utf-8" />
                     <title>Đào Duy Tùng - Software Engineer</title>
-                    <meta name="description" content="Đào Duy Tùng, Software Engineer,lập trình viên, WebDeveloper, Web Developer, Dev, Web" />
+                    <meta name="description" content="Đào Duy Tùng Software Engineer lập trình viên có nhiều kinh nghiệm trong nghề sẽ luôn đồng hành cùng khách hàng và cải thiện trải nghiệm người dùng trên các sản phẩm công nghệ anh làm ra!" />
                     <link rel="icon" href="/favicon.ico" />
                     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
-                    <link rel="apple-touch-icon" href="/favicon.ico"/>
-                    <link rel="manifest" href="/manifest.json"/>
+                    <link rel="apple-touch-icon" href="/favicon.ico" />
+                    <link rel="manifest" href="/manifest.json" />
 
-                    <link rel="stylesheet" href="/assets/css/reset.css" type ="text/css" />
-                    {/* <link rel="stylesheet" href="/assets/css/bootstrap-grid.min.css" type ="text/css" /> */}
-                    {/* <link rel="stylesheet" href="/assets/css/animations.css" type ="text/css" /> */}
-                    {/* <link rel="stylesheet" href="/assets/css/perfect-scrollbar.css" type ="text/css" /> */}
+                    <link rel="stylesheet" href="/assets/css/reset.css" type="text/css" />
+                    {/* <link rel="stylesheet" href="/assets/css/bootstrap-grid.min.css" type ="text/css" />
+                    <link rel="stylesheet" href="/assets/css/animations.css" type ="text/css" /> */}
+                    <link rel="stylesheet" href="/assets/css/perfect-scrollbar.css" type="text/css" />
                     {/* <link rel="stylesheet" href="/assets/css/owl.carousel.css" type ="text/css" /> */}
                     {/* <link rel="stylesheet" href="/assets/css/magnific-popup.css" type ="text/css" /> */}
-
+                    <meta name="robots" content="index, archive" />
                     <meta name="google-site-verification" content="VsN64OMCqBNjTgHAa1zv6eIADSYuj7JHW7IJSLRvW8c" />
 
                 </Head>
