@@ -30,11 +30,11 @@ class ResumeDefault extends React.Component<{}, { showSpinner: Boolean }> {
                     <link rel="manifest" href="/manifest.json"/>
 
                     <link rel="stylesheet" href="/assets/css/reset.css" type ="text/css" />
-                    <link rel="stylesheet" href="/assets/css/bootstrap-grid.min.css" type ="text/css" />
-                    <link rel="stylesheet" href="/assets/css/animations.css" type ="text/css" />
-                    <link rel="stylesheet" href="/assets/css/perfect-scrollbar.css" type ="text/css" />
-                    <link rel="stylesheet" href="/assets/css/owl.carousel.css" type ="text/css" />
-                    <link rel="stylesheet" href="/assets/css/magnific-popup.css" type ="text/css" />
+                    {/* <link rel="stylesheet" href="/assets/css/bootstrap-grid.min.css" type ="text/css" /> */}
+                    {/* <link rel="stylesheet" href="/assets/css/animations.css" type ="text/css" /> */}
+                    {/* <link rel="stylesheet" href="/assets/css/perfect-scrollbar.css" type ="text/css" /> */}
+                    {/* <link rel="stylesheet" href="/assets/css/owl.carousel.css" type ="text/css" /> */}
+                    {/* <link rel="stylesheet" href="/assets/css/magnific-popup.css" type ="text/css" /> */}
 
                     <meta name="google-site-verification" content="VsN64OMCqBNjTgHAa1zv6eIADSYuj7JHW7IJSLRvW8c" />
 
