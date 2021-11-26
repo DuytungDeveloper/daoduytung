@@ -17,7 +17,11 @@ const Home = () => {
                                 </div>
 
                                 <div className="item">
-                                    <div className="sp-subtitle">BackEnd-developer</div>
+                                    <div className="sp-subtitle">BackEnd Developer</div>
+                                </div>
+                                
+                                <div className="item">
+                                    <div className="sp-subtitle">Software Engineer</div>
                                 </div>
                             </OwlCarousel>
                         </div>
