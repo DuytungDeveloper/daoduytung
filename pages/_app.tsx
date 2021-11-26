@@ -4,11 +4,12 @@ import '../styles/globals.css'
 // import Head from 'next/head'
 // import Script from 'next/script'
 
-
+import { useState, useEffect } from 'react';
 import type { ReactElement, ReactNode } from 'react'
 import type { NextPage } from 'next'
 import type { AppProps } from 'next/app'
 import Router from 'next/router';
+import Spinner from '../components/spinners/default_spinner'
 
 
 import NProgress from 'nprogress'; //nprogress module
@@ -25,7 +26,21 @@ type AppPropsWithLayout = AppProps & {
 }
 
 export default function MyApp({ Component, pageProps }: AppPropsWithLayout) {
+  let [showSpiner, setSpiner] = useState(true);
+  useEffect(() => {
+    setTimeout(() => {
+      setSpiner(false);
+    }, 3000);
+  }, []);
   // Use the layout defined at the page level, if available
   const getLayout = Component.getLayout ?? ((page) => page)
+  return <>
+    <Spinner show={showSpiner} />
+    {getLayout(
+      <>
+        <Component {...pageProps} />
+      </>
+    )}
+  </>;
   return getLayout(<Component {...pageProps} />)
 }

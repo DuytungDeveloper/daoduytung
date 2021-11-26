@@ -2,7 +2,6 @@ import Header from './header';
 import React, { Suspense, lazy } from 'react';
 import Head from 'next/head'
 import Script from 'next/script'
-import Spinner from '../../spinners/default_spinner'
 // import $ from 'jquery'
 class ResumeDefault extends React.Component<{}, { showSpinner: Boolean }> {
     constructor(props: any) {
@@ -57,7 +56,6 @@ class ResumeDefault extends React.Component<{}, { showSpinner: Boolean }> {
                         </div>
                     </div>
                 </div> */}
-                <Spinner show={this.state.showSpinner}></Spinner>
 
                 <div className="page">
                     <div className="page-content">
