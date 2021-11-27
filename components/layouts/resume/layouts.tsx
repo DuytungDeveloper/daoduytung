@@ -2,13 +2,31 @@ import Header from './header';
 import React, { Suspense, lazy } from 'react';
 import Head from 'next/head'
 import Script from 'next/script'
+import { Animated } from "react-animated-css";
+import { withRouter, NextRouter } from 'next/router'
 // import $ from 'jquery'
+import {
+    motion, AnimatePresence,
+    domAnimation, LazyMotion,
+    m
+} from "framer-motion";
+import Variant_Helper from '../../../utils/Variant_Helper'
+
+interface WithRouterProps {
+    router: NextRouter
+}
+
+interface MyComponentProps extends WithRouterProps { }
+
+
+
 class ResumeDefault extends React.Component<{}, { showSpinner: Boolean }> {
     constructor(props: any) {
         super(props);
         this.state = {
             showSpinner: true
         }
+        // console.log(this.props.router);
     }
 
     componentDidMount() {
@@ -32,11 +50,11 @@ class ResumeDefault extends React.Component<{}, { showSpinner: Boolean }> {
 
                     <link rel="stylesheet" href="/assets/css/reset.css" type="text/css" />
                     {/* <link rel="stylesheet" href="/assets/css/bootstrap-grid.min.css" type ="text/css" /> */}
-                    <link rel="stylesheet" href="/assets/css/animations.css" type ="text/css" />
+                    <link rel="stylesheet" href="/assets/css/animations.css" type="text/css" />
                     <link rel="stylesheet" href="/assets/css/perfect-scrollbar.css" type="text/css" />
                     {/* <link rel="stylesheet" href="/assets/css/owl.carousel.css" type ="text/css" /> */}
                     {/* <link rel="stylesheet" href="/assets/css/magnific-popup.css" type ="text/css" /> */}
-                  
+                    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css" />
 
                 </Head>
                 {/* <div className="lm-animated-bg" style={{ backgroundImage: "url(/assets/img/main_bg.png)" }}></div> */}
@@ -76,7 +94,31 @@ class ResumeDefault extends React.Component<{}, { showSpinner: Boolean }> {
 
                         <div className="content-area">
                             <div className="animated-sections">
+                                {/* <Animated animationIn="bounceInLeft" animationOut="fadeOut" isVisible={true}>
+                                    {this.props.children}
+                                </Animated> */}
+                                {/* <LazyMotion features={domAnimation}>
+                                    <AnimatePresence
+                                        // onExitComplete={() => window.scrollTo(0, 0)}
+
+                                        exitBeforeEnter
+                                    >
+                                        <m.div
+                                            // key={router.route.concat(animation.name)}
+                                            // key={router.route}
+                                            // className="page-wrap"
+                                            initial="initial"
+                                            animate="animate"
+                                            exit="exit"
+                                            variants={Variant_Helper.Arrays[0].variants}
+                                            transition={Variant_Helper.Arrays[0].transition}
+                                        >
+                                              {this.props.children}
+                                        </m.div>
+                                    </AnimatePresence>
+                                </LazyMotion> */}
                                 {this.props.children}
+
                             </div>
                         </div>
 

@@ -1,7 +1,6 @@
 import React from 'react';
 import OwlCarousel from 'react-owl-carousel';
-import 'owl.carousel/dist/assets/owl.carousel.css';
-import 'owl.carousel/dist/assets/owl.theme.default.css';
+
 const Home = () => {
     return (
         <section data-id="home" className="animated-section ps ps--theme_default section-active">
