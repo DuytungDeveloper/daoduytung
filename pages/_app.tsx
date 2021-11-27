@@ -37,13 +37,18 @@ export default function MyApp({ Component, pageProps, router }: AppPropsWithLayo
   const url = `https://daoduytung.herokuapp.com${router.route}`
   let [showSpiner, setSpiner] = useState(true);
   let [animation, setAnimation] = useState(Variant_Helper.Arrays[0]);
+  let [countTime, setCountTime] = useState(0);
   useEffect(() => {
     setSpiner(false);
   }, []);
 
   useEffect(() => {
-    let temp = Variant_Helper.Arrays[Math.floor(Math.random() * Variant_Helper.Arrays.length)];
-    setAnimation(Variant_Helper.Arrays[Math.floor(Math.random() * Variant_Helper.Arrays.length)]);
+    if (countTime < 1)
+      setCountTime(countTime + 1);
+    if (countTime >= 1) {
+      let temp = Variant_Helper.Arrays[Math.floor(Math.random() * Variant_Helper.Arrays.length)];
+      setAnimation(Variant_Helper.Arrays[Math.floor(Math.random() * Variant_Helper.Arrays.length)]);
+    }
   }, [Component, router]);
   // Use the layout defined at the page level, if available
   const getLayout = Component.getLayout ?? ((page) => page)
