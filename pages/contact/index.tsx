@@ -24,7 +24,7 @@ export default Home
 
 Home.getLayout = function getLayout(page: ReactElement) {
   return (
-    <ResumeLayout>
+    <ResumeLayout title={"Thông tin liên hệ"} description="Liên hệ với lập trình viên ngay">
       {page}
     </ResumeLayout>
   )

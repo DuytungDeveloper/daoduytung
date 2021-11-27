@@ -1,6 +1,8 @@
-import '../styles/globals.css'
 import 'owl.carousel/dist/assets/owl.carousel.css';
 import 'owl.carousel/dist/assets/owl.theme.default.css';
+import '../styles/globals.css'
+import Head from 'next/head'
+import { DefaultSeo } from 'next-seo';
 // import  '../styles/ttemplate/main.css'
 // import type { AppProps } from 'next/app'
 // import Head from 'next/head'
@@ -22,7 +24,6 @@ import {
   domAnimation, LazyMotion,
   m
 } from "framer-motion";
-import { Animated } from "react-animated-css";
 //Binding events. 
 Router.events.on('routeChangeStart', () => NProgress.start()); Router.events.on('routeChangeComplete', () => NProgress.done()); Router.events.on('routeChangeError', () => NProgress.done());
 type NextPageWithLayout = NextPage & {
@@ -32,38 +33,8 @@ type NextPageWithLayout = NextPage & {
 type AppPropsWithLayout = AppProps & {
   Component: NextPageWithLayout
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-// https://www.youtube.com/watch?v=SuqU904ZHA4
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 export default function MyApp({ Component, pageProps, router }: AppPropsWithLayout) {
+  const url = `https://daoduytung.herokuapp.com${router.route}`
   let [showSpiner, setSpiner] = useState(true);
   let [animation, setAnimation] = useState(Variant_Helper.Arrays[0]);
   useEffect(() => {
@@ -71,60 +42,38 @@ export default function MyApp({ Component, pageProps, router }: AppPropsWithLayo
   }, []);
 
   useEffect(() => {
-    console.log('-------------------');
-    // console.log(Variant_Helper.Arrays.length);
-    console.log(Math.floor(Math.random() * Variant_Helper.Arrays.length));
     let temp = Variant_Helper.Arrays[Math.floor(Math.random() * Variant_Helper.Arrays.length)];
-    // while (temp == animation) {
-    //   temp = Variant_Helper.Arrays[Math.floor(Math.random() * Variant_Helper.Arrays.length)];
-    // }
-    console.log(temp);
     setAnimation(Variant_Helper.Arrays[Math.floor(Math.random() * Variant_Helper.Arrays.length)]);
   }, [Component, router]);
-
-  // let animation = useMemo(() => {
-  //   return Variant_Helper.Arrays[Math.floor(Math.random() * Variant_Helper.Arrays.length)]
-  // }, [Component]);
-
   // Use the layout defined at the page level, if available
   const getLayout = Component.getLayout ?? ((page) => page)
   return <>
+    <Head>
+      <meta charSet="utf-8" />
+      <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+      <meta name="robots" content="index, archive" />
+      <meta name="google-site-verification" content="VsN64OMCqBNjTgHAa1zv6eIADSYuj7JHW7IJSLRvW8c" />
+      <link rel="icon" href="/favicon.ico" />
+      <link rel="apple-touch-icon" href="/favicon.ico" />
+      <link rel="manifest" href="/manifest.json" />
+
+      <title>Đào Duy Tùng - Software Engineer</title>
+      <meta name="description" content="Đào Duy Tùng Software Engineer lập trình viên có nhiều kinh nghiệm trong nghề sẽ luôn đồng hành cùng khách hàng và cải thiện trải nghiệm người dùng trên các sản phẩm công nghệ anh làm ra!" />
+
+    </Head>
+    <DefaultSeo
+      titleTemplate="%s | Đào Duy tùng"
+      openGraph={{
+        type: 'website',
+        locale: 'vn_IE',
+        url,
+        description: 'Đào Duy Tùng Software Engineer lập trình viên có nhiều kinh nghiệm trong nghề sẽ luôn đồng hành cùng khách hàng và cải thiện trải nghiệm người dùng trên các sản phẩm công nghệ anh làm ra!',
+        site_name: 'Đào Duy Tùng | Software Engineer',
+        images: [],
+      }}
+    />
     <Spinner show={showSpiner} />
     {getLayout(
-      // <motion.div
-      //   key={router.route}
-      //   // className="animate__animated animate__fadeIn"
-      //   // transition={{
-      //   //   delay: 1,
-      //   //   default: { duration: 1 },
-      //   // }}
-      //   // animate={{ x: 100 }}
-      //   // transition={{ type: "spring", bounce: 0.25 }}
-
-      //   initial="initial"
-      //   animate="animate"
-      //   exit="exit"
-
-      //   variants={Variant_Helper.fadeBack.variants}
-      //   transition={Variant_Helper.fadeBack.transition}
-
-      // // variants={{
-      // //   initial: {
-      // //     opacity: 0,
-      // //     // transitionDelay : '-moz-initial'
-      // //   },
-      // //   animate: {
-      // //     opacity: 1,
-      // //   },
-      // //   exit: {
-      // //     className: "animate__animated animate__fadeOut"
-      // //   }
-      // // }}
-      // >
-      //   <Component {...pageProps} />
-      // </motion.div>
-
-
       <LazyMotion features={domAnimation}>
         <AnimatePresence
           onExitComplete={() => window.scrollTo(0, 0)}
@@ -146,22 +95,7 @@ export default function MyApp({ Component, pageProps, router }: AppPropsWithLayo
           </m.div>
         </AnimatePresence>
       </LazyMotion>
-
-
-      // <Component {...pageProps} />
-
-
-      // <motion.div>
-      //   <Animated animationIn="bounceInLeft" animationOut="fadeOut" isVisible={true} key={router.route}>
-      //     <Component {...pageProps} router={router}/>
-      //   </Animated>
-      // </motion.div>
-
-      // <Animated animationIn="bounceInLeft" animationOut="fadeOut" isVisible={true} key={router.route}>
-      //   <Component {...pageProps} />
-      // </Animated>
     )
     }
   </>;
-  return getLayout(<Component {...pageProps} />)
 }
