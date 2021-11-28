@@ -14,7 +14,7 @@ class ResumeDefault extends React.Component<MyComponentProps, { showSpinner: Boo
     constructor(props: any) {
         super(props);
     }
-  
+
     render() {
         return (
             <>
@@ -25,7 +25,7 @@ class ResumeDefault extends React.Component<MyComponentProps, { showSpinner: Boo
                     <link rel="stylesheet" href="/assets/css/animations.css" type="text/css" />
                     <link rel="stylesheet" href="/assets/css/perfect-scrollbar.css" type="text/css" />
                     {/* <link rel="stylesheet" href="/assets/css/owl.carousel.css" type ="text/css" /> */}
-                    <link rel="stylesheet" href="/assets/css/magnific-popup.css" type ="text/css" />
+                    <link rel="stylesheet" href="/assets/css/magnific-popup.css" type="text/css" />
                     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css" />
 
                 </Head>
@@ -57,6 +57,7 @@ class ResumeDefault extends React.Component<MyComponentProps, { showSpinner: Boo
                 </div>
 
 
+                <Script src="https://www.google.com/recaptcha/api.js" async defer></Script>
                 <Script src="/assets/js/jquery-2.1.3.min.js" strategy={'beforeInteractive'} ></Script>
                 <Script src="/assets/js/modernizr.custom.js" strategy={'beforeInteractive'}  ></Script>
                 <Script src="/assets/js/animating.js" strategy={'beforeInteractive'} ></Script>
