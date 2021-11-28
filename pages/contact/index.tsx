@@ -1,16 +1,17 @@
-import { useEffect, useState, useRef } from 'react'
+import React, { useEffect, useState, useRef } from 'react'
 import ReCAPTCHA from "react-google-recaptcha";
 import type { ReactElement } from 'react'
 import ResumeLayout from '../../components/layouts/resume/layouts';
+import { FormEventHandler } from 'react-google-recaptcha/node_modules/@types/react';
 const Home = () => {
   let [fullName, setFullName] = useState('');
   let [email, setEmail] = useState('');
   let [subject, setSubject] = useState('');
   let [message, setMessage] = useState('');
   let [capchaValue, setCapchaValue] = useState('');
-  const recaptchaRef : any = useRef();
+  const recaptchaRef: any = useRef();
 
-  const onSubmit = async (event: Event) => {
+  const onSubmit = (event: React.FormEvent) => {
     event.preventDefault();
 
     const token = recaptchaRef.current.getValue();
