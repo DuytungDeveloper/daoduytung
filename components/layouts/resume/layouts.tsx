@@ -3,6 +3,7 @@ import React, { ReactNode } from 'react';
 import Head from 'next/head'
 import { NextSeo } from 'next-seo';
 import Script from 'next/script'
+import '../../../styles/resumeLayout.module.css';
 interface WithRouterProps {
     children?: ReactNode,
     title?: string
@@ -27,7 +28,7 @@ class ResumeDefault extends React.Component<MyComponentProps, { showSpinner: Boo
                     {/* <link rel="stylesheet" href="/assets/css/owl.carousel.css" type ="text/css" /> */}
                     <link rel="stylesheet" href="/assets/css/magnific-popup.css" type="text/css" />
                     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css" />
-
+                    {/* <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@11.2.1/dist/sweetalert2.min.css" integrity="sha256-bu+Q0/9Hd3s1aqqSfpxp4Ce2ZjPhyyQlx0eU7n/JHvU=" crossOrigin="anonymous" /> */}
                 </Head>
                 <div className="page">
                     <div className="page-content">

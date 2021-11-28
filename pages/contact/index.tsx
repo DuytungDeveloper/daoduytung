@@ -1,33 +1,56 @@
 import React, { useEffect, useState, useRef } from 'react'
 import ReCAPTCHA from "react-google-recaptcha";
+import axios from 'axios';
 import type { ReactElement } from 'react'
 import ResumeLayout from '../../components/layouts/resume/layouts';
 import { FormEventHandler } from 'react-google-recaptcha/node_modules/@types/react';
+import toast, { Toaster } from 'react-hot-toast';
 const Home = () => {
   let [fullName, setFullName] = useState('');
   let [email, setEmail] = useState('');
   let [subject, setSubject] = useState('');
   let [message, setMessage] = useState('');
-  let [capchaValue, setCapchaValue] = useState('');
   const recaptchaRef: any = useRef();
 
-  const onSubmit = (event: React.FormEvent) => {
+  const onSubmit = async (event: React.FormEvent) => {
     event.preventDefault();
 
     const token = recaptchaRef.current.getValue();
-    console.log({
+    let dataPost = {
       fullName,
       email,
       subject,
       message,
       token
-    });
-    return;
+    };
+
+    if (dataPost.fullName == '' || dataPost.email == '' || dataPost.subject == '' || dataPost.message == '') {
+      return toast.error('Vui lòng điền đầy đủ thông tin!');
+    }
+    else {
+      if (dataPost.token == '') {
+        return toast.error('Vui lòng nhập Capcha!');
+      }
+      let request = await axios.post('/api/postContact', dataPost)
+      let response = request.data;
+      if (response.success) {
+        setFullName('');
+        setEmail('');
+        setSubject('');
+        setMessage('');
+        return toast.success('Cám ơn bạn đã liên hệ với tôi\nTôi sẽ liên lạc lại với bạn sớm nhất có thể!');
+      } else {
+        return toast.error(response.message);
+      }
+    }
+    // return;
   }
 
   return (
     <>
-
+      <Toaster position="top-right"
+        reverseOrder={false}
+      />
       <section data-id="contact" className="animated-section  ps ps--theme_default section-active">
         <div className="page-title">
           <h2>Contact</h2>
@@ -101,21 +124,21 @@ const Home = () => {
                 <div className="controls two-columns">
                   <div className="fields clearfix">
                     <div className="left-column">
-                      <div className="form-group form-group-with-icon">
+                      <div className={fullName != '' ? 'form-group form-group-with-icon form-group-focus' : 'form-group form-group-with-icon'} >
                         <input value={fullName} onChange={(event) => { setFullName(event.target.value); }} type="text" name="name" className="form-control" placeholder="" required data-error="Name is required." />
                         <label>Full Name</label>
                         <div className="form-control-border"></div>
                         <div className="help-block with-errors"></div>
                       </div>
 
-                      <div className="form-group form-group-with-icon">
+                      <div className={email != '' ? 'form-group form-group-with-icon form-group-focus' : 'form-group form-group-with-icon'} >
                         <input value={email} onChange={(event) => { setEmail(event.target.value); }} type="email" name="email" className="form-control" placeholder="" required data-error="Valid email is required." />
                         <label>Email Address</label>
                         <div className="form-control-border"></div>
                         <div className="help-block with-errors"></div>
                       </div>
 
-                      <div className="form-group form-group-with-icon">
+                      <div className={subject != '' ? 'form-group form-group-with-icon form-group-focus' : 'form-group form-group-with-icon'} >
                         <input value={subject} onChange={(event) => { setSubject(event.target.value); }} type="text" name="subject" className="form-control" placeholder="" required data-error="Subject is required." />
                         <label>Subject</label>
                         <div className="form-control-border"></div>
@@ -123,7 +146,7 @@ const Home = () => {
                       </div>
                     </div>
                     <div className="right-column">
-                      <div className="form-group form-group-with-icon">
+                      <div className={message != '' ? 'form-group form-group-with-icon form-group-focus' : 'form-group form-group-with-icon'} >
                         <textarea value={message} onChange={(event) => { setMessage(event.target.value); }} name="message" className="form-control" placeholder="" rows={7} required data-error="Please, leave me a message."></textarea>
                         <label>Message</label>
                         <div className="form-control-border"></div>

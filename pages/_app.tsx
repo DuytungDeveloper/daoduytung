@@ -61,6 +61,7 @@ export default function MyApp({ Component, pageProps, router }: AppPropsWithLayo
       <link rel="icon" href="/favicon.ico" />
       <link rel="apple-touch-icon" href="/favicon.ico" />
       <link rel="manifest" href="/manifest.json" />
+      <link rel="stylesheet" href="/assets/css/main.css" type="text/css" />
 
       <title>Đào Duy Tùng - Software Engineer</title>
       <meta name="description" content="Đào Duy Tùng Software Engineer lập trình viên có nhiều kinh nghiệm trong nghề sẽ luôn đồng hành cùng khách hàng và cải thiện trải nghiệm người dùng trên các sản phẩm công nghệ anh làm ra!" />
