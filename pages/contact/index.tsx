@@ -8,7 +8,7 @@ const Home = () => {
   let [subject, setSubject] = useState('');
   let [message, setMessage] = useState('');
   let [capchaValue, setCapchaValue] = useState('');
-  const recaptchaRef = useRef();
+  const recaptchaRef : any = useRef();
 
   const onSubmit = async (event: Event) => {
     event.preventDefault();
