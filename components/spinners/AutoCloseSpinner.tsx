@@ -33,15 +33,7 @@ export default function SpinnerDefault() {
         }, stepTime);
 
     }, []);
-
-
-
-
-
-
-
     useEffect(() => {
-        console.log(show);
         if (!show) {
             setTimeout(() => {
                 setRemove(true);

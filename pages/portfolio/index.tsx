@@ -194,6 +194,9 @@ const DetailView = (props: any) => {
           <img src={x.urlMini} alt={x.title} title={x.title} loading='lazy' />
           <a href={x.url} className="lightbox mfp-iframe" title={x.title}></a>
         </div>
+        {/* <i className="far fa-image"></i>
+        <h4 className="name">{x.title}</h4>
+        <span className="category">{x.key}</span> */}
       </figure>
 
     } else
