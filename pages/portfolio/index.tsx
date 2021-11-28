@@ -70,12 +70,12 @@ function getAllListData() {
     { title: 'Trang trí công ty VIHAT các dịp đặc biệt', url: '', urlMini: '', key: 'Vihat' },
     { title: 'Biểu diễn đêm hội vui chơi ở VIHAT', url: '', urlMini: '', key: 'Vihat' },
     { title: 'Tham gia các hoạt động ngoài trời của công ty VIHAT', url: '', urlMini: '', key: 'Vihat' },
+    
     { title: 'Company Trip của công ty VIHAT 1', url: '', urlMini: '', key: 'Vihat' },
     { title: 'Company Trip của công ty VIHAT 2', url: '', urlMini: '', key: 'Vihat' },
     { title: 'Company Trip của công ty VIHAT 3', url: '', urlMini: '', key: 'Vihat' },
     { title: 'Company Trip của công ty VIHAT 4', url: '', urlMini: '', key: 'Vihat' },
     { title: 'Company Trip của công ty VIHAT 5', url: '', urlMini: '', key: 'Vihat' },
-
     { title: 'Company Trip của công ty VIHAT 6', url: '', urlMini: '', key: 'Vihat' },
     { title: 'Company Trip của công ty VIHAT 7', url: '', urlMini: '', key: 'Vihat' },
     { title: 'Company Trip của công ty VIHAT 8', url: '', urlMini: '', key: 'Vihat' },
@@ -91,7 +91,8 @@ function getAllListData() {
     { title: 'Company Trip của công ty VIHAT 19', url: '', urlMini: '', key: 'Vihat' },
     { title: 'Company Trip của công ty VIHAT 20', url: '', urlMini: '', key: 'Vihat' },
     { title: 'Company Trip của công ty VIHAT 21', url: '', urlMini: '', key: 'Vihat' },
-
+    { title: 'Company Trip của công ty VIHAT 22', url: '', urlMini: '', key: 'Vihat' },
+    
     { title: 'Hoạt động đội nhóm công ty VIHAT', url: '', urlMini: '', key: 'Vihat' },
     { title: 'Tham gia lễ cưới quản lý cùng người yêu ở công ty VIHAT', url: '', key: 'Vihat' },
 
@@ -108,12 +109,16 @@ function getAllListData() {
     { title: 'Ban lãnh đạo và giám đốc gọi điện chúc mừng sinh nhật cho nhân viên', url: '', urlMini: '', key: 'Vihat' },
     { title: 'Bộ test Covid công ty VIHAT gửi trước khi lên công ty chính thức', url: '', urlMini: '', key: 'Vihat' },
     { title: 'Biểu diễn văn nghệ', type: "video", url: 'https://www.youtube.com/embed/qcMOBSdt-nE', urlMini: 'assets/img/portfolio/Vihat/Mini/4.jpg', key: 'Vihat' },
-
   ]
   listVihat = listVihat.map((x, i) => {
     if (!x.type) {
+    //
+      console.log('-------------------');
+      console.log(x.title);
       x.url = `assets/img/portfolio/Vihat/${i + 1}.jpg`;
       x.urlMini = `assets/img/portfolio/Vihat/Mini/${i + 1}.jpg`;
+      console.log(x.url);
+      console.log(x.urlMini);
     }
     return x;
   })
@@ -184,7 +189,7 @@ const DetailView = (props: any) => {
 
       return <figure className="item lbvideo" data-groups={keyCa}>
         <div className="portfolio-item-img">
-          <img src={x.urlMini} alt={x.title} title={x.title} />
+          <img src={x.urlMini} alt={x.title} title={x.title} loading='lazy' style={{ width: 'auto', height: '70px' }} />
           <a href={x.url} className="lightbox mfp-iframe" title={x.title}></a>
         </div>
       </figure>
