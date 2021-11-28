@@ -81,7 +81,7 @@ export default async function handler(
       }
       //#endregion
       try {
-        let urlSlack = 'https://hooks.slack.com/services/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';
+        let urlSlack = 'https://hooks.slack.com/services/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';
         let message = `Ngày : ${DateToString(new Date)} \nKhách hàng : ${data.fullName} \nEmail khách : ${data.email.toString()} \nTiêu đề : ${data.subject} \nNội dung : ${data.message}`;
 
         let rs = await axios.post(urlSlack,
