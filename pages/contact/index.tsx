@@ -28,9 +28,9 @@ const Home = () => {
       return toast.error('Vui lòng điền đầy đủ thông tin!');
     }
     else {
-      if (dataPost.token == '') {
-        return toast.error('Vui lòng nhập Capcha!');
-      }
+      // if (dataPost.token == '') {
+      //   return toast.error('Vui lòng nhập Capcha!');
+      // }
       let request = await axios.post('/api/postContact', dataPost)
       let response = request.data;
       if (response.success) {
