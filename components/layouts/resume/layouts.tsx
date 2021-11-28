@@ -14,17 +14,18 @@ class ResumeDefault extends React.Component<MyComponentProps, { showSpinner: Boo
     constructor(props: any) {
         super(props);
     }
+  
     render() {
         return (
             <>
                 <NextSeo title={this.props.title} description={this.props.description} openGraph={{ title: this.props.title, description: this.props.description }} />
                 <Head>
                     <link rel="stylesheet" href="/assets/css/reset.css" type="text/css" />
-                    <link rel="stylesheet" href="/assets/css/bootstrap-grid.min.css" type ="text/css" />
+                    <link rel="stylesheet" href="/assets/css/bootstrap-grid.min.css" type="text/css" />
                     <link rel="stylesheet" href="/assets/css/animations.css" type="text/css" />
                     <link rel="stylesheet" href="/assets/css/perfect-scrollbar.css" type="text/css" />
                     {/* <link rel="stylesheet" href="/assets/css/owl.carousel.css" type ="text/css" /> */}
-                    {/* <link rel="stylesheet" href="/assets/css/magnific-popup.css" type ="text/css" /> */}
+                    <link rel="stylesheet" href="/assets/css/magnific-popup.css" type ="text/css" />
                     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css" />
 
                 </Head>

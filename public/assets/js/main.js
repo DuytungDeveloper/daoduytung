@@ -73,9 +73,9 @@
         })
         .on('resize', function () { //Resize
             mobileMenuHide();
-            // $('.animated-section').each(function () {
-            //     $(this).perfectScrollbar('update');
-            // });
+            $('.animated-section').each(function () {
+                $(this).perfectScrollbar('update');
+            });
             customScroll();
         });
 
@@ -276,3 +276,37 @@
     });
 
 })(jQuery);
+
+function customScroll() {
+    var windowWidth = $(window).width();
+    if (windowWidth > 1024) {
+        $('.animated-section, .single-page-content').each(function () {
+            $(this).perfectScrollbar();
+        });
+    } else {
+        $('.animated-section, .single-page-content').each(function () {
+            $(this).perfectScrollbar('destroy');
+        });
+    }
+}
+function portfolio_init() {
+    var portfolio_grid = $('.portfolio-grid'),
+        portfolio_filter = $('.portfolio-filters');
+
+    if (portfolio_grid) {
+
+        portfolio_grid.shuffle({
+            speed: 450,
+            itemSelector: 'figure'
+        });
+
+        portfolio_filter.on("click", ".filter", function (e) {
+            portfolio_grid.shuffle('update');
+            e.preventDefault();
+            $('.portfolio-filters .filter').parent().removeClass('active');
+            $(this).parent().addClass('active');
+            portfolio_grid.shuffle('shuffle', $(this).attr('data-group'));
+        });
+
+    }
+}

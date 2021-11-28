@@ -59,7 +59,6 @@ const fadeBack = {
             ...default_Initial,
             opacity: 0,
             scale: 0.4,
-            height: '100%'
             // x: '50%',
             // y: '50%',
             // z: -50
@@ -67,7 +66,6 @@ const fadeBack = {
         animate: {
             opacity: 1,
             scale: 1,
-            height: '100%',
             // x: 0,
             // y: 0,
             // z: 0
@@ -111,13 +109,11 @@ const rotateX = {
             opacity: 1,
 
             scale: 0.6,
-            height: '100%'
         },
         animate: {
             opacity: 1,
             rotateZ: 0,
             scale: 1,
-            height: '100%'
         },
         exit: {
             opacity: 0,

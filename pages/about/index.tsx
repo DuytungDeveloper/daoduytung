@@ -1,6 +1,11 @@
+import { useEffect } from 'react'
 import type { ReactElement } from 'react'
 import ResumeLayout from '../../components/layouts/resume/layouts';
 const Home = () => {
+  useEffect(() => {
+    //@ts-ignore
+    customScroll();
+  }, [])
   return (
     <>
       <section data-id="about-me" className="animated-section ps ps--theme_default section-active">
@@ -95,7 +100,7 @@ const Home = () => {
                     </div>
                     <div className="ci-text">
                       <h4>Sáng tạo nội dung</h4>
-                      <p>Xây dựng các phần mềm, API và các công cụ hỗ trợ theo yêu cầu của khách hàng. Quản lý fanpage, nhập văn bản dữ liệu, thu thập dữ liệu các website, làm tool chức năng cho Chrome theo yêu cầu của khách hàng.</p>
+                      <p>Xây dựng các phần mềm, API và các công cụ hỗ trợ theo yêu cầu của khách hàng. Quản lý fanpage, nhập văn bản dữ liệu, thu thập dữ liệu các website, làm tool chức năng cho Chrome theo yêu cầu của khách hàng.  Đưa ra các ý tưởng cũng như cải thiện sản phẩm dự án , tối ưu nhất đối với các hệ thống cũng như luồng công việc thuận tiện cho các bộ phận khác như Sale, CS, ban quản lý , ban giám đốc có thể theo dõi sát sao công việc cũng như hệ thống của khách hàng.</p>
                     </div>
                   </div>
                   <div className="info-block-w-icon">
