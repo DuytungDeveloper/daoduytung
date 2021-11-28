@@ -1,5 +1,4 @@
 import { useEffect, useMemo, useState } from 'react'
-import dynamic from "next/dynamic";
 import type { ReactElement } from 'react'
 import ResumeLayout from '../../components/layouts/resume/layouts';
 function shuffle(array: Array<any>) {
@@ -345,7 +344,7 @@ export default Home
 
 Home.getLayout = function getLayout(page: ReactElement) {
   return (
-    <ResumeLayout title={"Các dự án đã tham dự"} description="Thông tin các dự án và môi trường công ty đã làm việc">
+    <ResumeLayout title={"Hoạt động và các dự án đã tham dự"} description="Thông tin các dự án và môi trường công ty đã làm việc">
       {page}
     </ResumeLayout>
   )
