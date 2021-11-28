@@ -112,13 +112,8 @@ function getAllListData() {
   ]
   listVihat = listVihat.map((x, i) => {
     if (!x.type) {
-    //
-      console.log('-------------------');
-      console.log(x.title);
       x.url = `assets/img/portfolio/Vihat/${i + 1}.jpg`;
       x.urlMini = `assets/img/portfolio/Vihat/Mini/${i + 1}.jpg`;
-      console.log(x.url);
-      console.log(x.urlMini);
     }
     return x;
   })
