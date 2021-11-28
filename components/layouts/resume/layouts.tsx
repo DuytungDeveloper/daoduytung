@@ -28,7 +28,7 @@ class ResumeDefault extends React.Component<MyComponentProps, { showSpinner: Boo
                     {/* <link rel="stylesheet" href="/assets/css/owl.carousel.css" type ="text/css" /> */}
                     <link rel="stylesheet" href="/assets/css/magnific-popup.css" type="text/css" />
                     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css" />
-                    {/* <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@11.2.1/dist/sweetalert2.min.css" integrity="sha256-bu+Q0/9Hd3s1aqqSfpxp4Ce2ZjPhyyQlx0eU7n/JHvU=" crossOrigin="anonymous" /> */}
+                    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css" integrity="sha384-zCbKRCUGaJDkqS1kPbPd7TveP5iyJE0EjAuZQTgFLD2ylzuqKfdKlfG/eSrtxUkn" crossOrigin="anonymous"></link>
                 </Head>
                 <div className="page">
                     <div className="page-content">

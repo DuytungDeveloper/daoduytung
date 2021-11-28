@@ -13,7 +13,8 @@ import type { ReactElement, ReactNode } from 'react'
 import type { NextPage } from 'next'
 import type { AppProps } from 'next/app'
 import Router from 'next/router';
-import Spinner from '../components/spinners/default_spinner'
+// import Spinner from '../components/spinners/default_spinner'
+import Spinner from '../components/spinners/AutoCloseSpinner'
 import Variant_Helper from '../utils/Variant_Helper'
 
 
@@ -78,7 +79,7 @@ export default function MyApp({ Component, pageProps, router }: AppPropsWithLayo
         images: [],
       }}
     />
-    <Spinner show={showSpiner} />
+    <Spinner/>
     {getLayout(
       <LazyMotion features={domAnimation}>
         <AnimatePresence

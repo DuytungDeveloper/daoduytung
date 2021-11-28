@@ -2,6 +2,7 @@ import { useEffect, useMemo, useState } from 'react'
 import type { ReactElement } from 'react'
 import ResumeLayout from '../../components/layouts/resume/layouts';
 import Spinner from '../../components/spinners/default_spinner';
+import AutoCloseSpinner from '../../components/spinners/AutoCloseSpinner';
 function shuffle(array: Array<any>) {
   let currentIndex = array.length, temporaryValue, randomIndex;
 
@@ -221,17 +222,20 @@ const Home = () => {
     //@ts-ignore
     var $portfolio_container = $(".portfolio-grid");
     $portfolio_container.imagesLoaded(function () {
-      setshowSpinner(false);
+      // setshowSpinner(false);
       //@ts-ignore
       portfolio_init(this);
     });
+    //@ts-ignore
+    // animateValue(() => { setshowSpinner(false) })
 
     //@ts-ignore
     customScroll();
   }, [listAllData])
   return (
     <>
-      <Spinner show={showSpinner} />
+      {/* <Spinner show={showSpinner} /> */}
+      <AutoCloseSpinner />
       <section data-id="portfolio" className="animated-section ps ps--theme_default section-active">
         <div className="page-title">
           <h2>Portfolio</h2>
