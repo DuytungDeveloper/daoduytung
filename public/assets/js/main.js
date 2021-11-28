@@ -310,3 +310,9 @@ function portfolio_init() {
 
     }
 }
+function LoadCaiHinh() {
+    var $portfolio_container = $(".portfolio-grid");
+    $portfolio_container.imagesLoaded(function () {
+        portfolio_init(this);
+    });
+}

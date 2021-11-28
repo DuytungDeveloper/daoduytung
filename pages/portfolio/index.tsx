@@ -70,7 +70,7 @@ function getAllListData() {
     { title: 'Trang trí công ty VIHAT các dịp đặc biệt', url: '', urlMini: '', key: 'Vihat' },
     { title: 'Biểu diễn đêm hội vui chơi ở VIHAT', url: '', urlMini: '', key: 'Vihat' },
     { title: 'Tham gia các hoạt động ngoài trời của công ty VIHAT', url: '', urlMini: '', key: 'Vihat' },
-    
+
     { title: 'Company Trip của công ty VIHAT 1', url: '', urlMini: '', key: 'Vihat' },
     { title: 'Company Trip của công ty VIHAT 2', url: '', urlMini: '', key: 'Vihat' },
     { title: 'Company Trip của công ty VIHAT 3', url: '', urlMini: '', key: 'Vihat' },
@@ -92,7 +92,7 @@ function getAllListData() {
     { title: 'Company Trip của công ty VIHAT 20', url: '', urlMini: '', key: 'Vihat' },
     { title: 'Company Trip của công ty VIHAT 21', url: '', urlMini: '', key: 'Vihat' },
     { title: 'Company Trip của công ty VIHAT 22', url: '', urlMini: '', key: 'Vihat' },
-    
+
     { title: 'Hoạt động đội nhóm công ty VIHAT', url: '', urlMini: '', key: 'Vihat' },
     { title: 'Tham gia lễ cưới quản lý cùng người yêu ở công ty VIHAT', url: '', key: 'Vihat' },
 
@@ -108,6 +108,11 @@ function getAllListData() {
     { title: 'Công ty tổ chức chúc mừng sinh nhật cho nhân viên và kèm theo quà chúc sinh nhật (Chuyển khoản)', url: '', urlMini: '', key: 'Vihat' },
     { title: 'Ban lãnh đạo và giám đốc gọi điện chúc mừng sinh nhật cho nhân viên', url: '', urlMini: '', key: 'Vihat' },
     { title: 'Bộ test Covid công ty VIHAT gửi trước khi lên công ty chính thức', url: '', urlMini: '', key: 'Vihat' },
+
+    { title: 'Hệ thống website TOPUP', url: '', urlMini: '', key: 'Vihat' },
+    { title: 'Hệ thống tin nhắn eSMS', url: '', urlMini: '', key: 'Vihat' },
+    { title: 'Phần mềm quản lý TOPUP (Electron+ReactJS)', url: '', urlMini: '', key: 'Vihat' },
+
     { title: 'Biểu diễn văn nghệ', type: "video", url: 'https://www.youtube.com/embed/qcMOBSdt-nE', urlMini: 'assets/img/portfolio/Vihat/Mini/4.jpg', key: 'Vihat' },
   ]
   listVihat = listVihat.map((x, i) => {
@@ -133,11 +138,11 @@ function getAllListData() {
   //#endregion
 
   let listAll = [
-    ...listCaoThang,
+    ...listVihat,
     ...listDirox,
-    ...listHobby,
     ...listRyomo,
-    ...listVihat
+    ...listCaoThang,
+    ...listHobby,
   ]
   listAll = shuffle(listAll);
   //@ts-ignore
@@ -169,7 +174,7 @@ const DetailView = (props: any) => {
     return (
       <figure className="item lbimage" data-groups={keyCa}>
         <div className="portfolio-item-img">
-          <img src={x.urlMini} alt={x.title} title={x.title} />
+          <img src={x.urlMini} alt={x.title} title={x.title} loading='lazy' />
           <a className="lightbox" title={x.title} href={x.url}></a>
         </div>
 
@@ -184,7 +189,7 @@ const DetailView = (props: any) => {
 
       return <figure className="item lbvideo" data-groups={keyCa}>
         <div className="portfolio-item-img">
-          <img src={x.urlMini} alt={x.title} title={x.title} loading='lazy' style={{ width: 'auto', height: '70px' }} />
+          <img src={x.urlMini} alt={x.title} title={x.title} loading='lazy' />
           <a href={x.url} className="lightbox mfp-iframe" title={x.title}></a>
         </div>
       </figure>
@@ -197,9 +202,6 @@ let datas = getAllListData().listAll;
 
 const Home = () => {
 
-  // let [listAllData, setlistAllData] = useState(datas);
-  // let [allCategory, setallCategory] = useState(["Vihat", "Dirox", "Ryomo", "Cao Thắng", "Hobby"]);
-
   let listAllData = datas;
   let allCategory = [
     "Vihat",
@@ -208,11 +210,20 @@ const Home = () => {
     "Cao Thắng",
     "Hobby"
   ];
+
   useEffect(() => {
-    setTimeout(() => {
+    // setTimeout(() => {
+    //   //@ts-ignore
+    //   LoadCaiHinh();
+    // }, 1000);
+
+    //@ts-ignore
+    var $portfolio_container = $(".portfolio-grid");
+    $portfolio_container.imagesLoaded(function () {
       //@ts-ignore
-      portfolio_init();
-    }, 1000);
+      portfolio_init(this);
+    });
+
     //@ts-ignore
     customScroll();
   }, [listAllData])
