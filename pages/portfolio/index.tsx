@@ -48,8 +48,8 @@ function getAllListData() {
     { title: 'Nhóm thực tập công ty Ryomo', urlMini: '', url: '', key: 'Ryomo' },
   ]
   listRyomo = listRyomo.map((x, i) => {
-    x.url = `assets/img/portfolio/Ryomo/${i + 1}.jpg`;
-    x.urlMini = `assets/img/portfolio/Ryomo/Mini/${i + 1}.jpg`;
+    x.url = `/assets/img/portfolio/Ryomo/${i + 1}.jpg`;
+    x.urlMini = `/assets/img/portfolio/Ryomo/Mini/${i + 1}.jpg`;
     return x;
   })
   //#endregion
@@ -60,8 +60,8 @@ function getAllListData() {
     { title: 'Các đồng nghiệp nước ngoài', urlMini: '', url: '', key: 'Dirox' },
   ]
   listDirox = listDirox.map((x, i) => {
-    x.url = `assets/img/portfolio/Dirox/${i + 1}.jpg`;
-    x.urlMini = `assets/img/portfolio/Dirox/Mini/${i + 1}.jpg`;
+    x.url = `/assets/img/portfolio/Dirox/${i + 1}.jpg`;
+    x.urlMini = `/assets/img/portfolio/Dirox/Mini/${i + 1}.jpg`;
     return x;
   })
   //#endregion
@@ -119,8 +119,8 @@ function getAllListData() {
   ]
   listVihat = listVihat.map((x, i) => {
     if (!x.type) {
-      x.url = `assets/img/portfolio/Vihat/${i + 1}.jpg`;
-      x.urlMini = `assets/img/portfolio/Vihat/Mini/${i + 1}.jpg`;
+      x.url = `/assets/img/portfolio/Vihat/${i + 1}.jpg`;
+      x.urlMini = `/assets/img/portfolio/Vihat/Mini/${i + 1}.jpg`;
     }
     return x;
   })
@@ -133,8 +133,8 @@ function getAllListData() {
     { title: 'Game giải trí', url: '', urlMini: '', key: 'Hobby' },
   ]
   listHobby = listHobby.map((x, i) => {
-    x.url = `assets/img/portfolio/Hobby/${i + 1}.jpg`;
-    x.urlMini = `assets/img/portfolio/Hobby/Mini/${i + 1}.jpg`;
+    x.url = `/assets/img/portfolio/Hobby/${i + 1}.jpg`;
+    x.urlMini = `/assets/img/portfolio/Hobby/Mini/${i + 1}.jpg`;
     return x;
   })
   //#endregion
@@ -206,7 +206,8 @@ const DetailView = (props: any) => {
 let datas = getAllListData().listAll;
 
 const Home = () => {
-  let [showSpinner, setshowSpinner] = useState(true);
+  // let [showSpinner, setshowSpinner] = useState(true);
+  let [show, setShow] = useState(false);
   let listAllData = datas;
   let allCategory = [
     "Vihat",
@@ -228,6 +229,7 @@ const Home = () => {
       // setshowSpinner(false);
       //@ts-ignore
       portfolio_init(this);
+      setShow(true);
     });
     //@ts-ignore
     // animateValue(() => { setshowSpinner(false) })
@@ -237,9 +239,9 @@ const Home = () => {
   }, [listAllData])
   return (
     <>
-      {/* <Spinner show={showSpinner} /> */}
-      <AutoCloseSpinner />
-      <section data-id="portfolio" className="animated-section ps ps--theme_default section-active">
+      <Spinner show={!show} />
+      {/* <AutoCloseSpinner /> */}
+      <section data-id="portfolio" className="animated-section ps ps--theme_default section-active" style={{ opacity: (show ? 1 : 0) }}>
         <div className="page-title">
           <h2>Portfolio</h2>
         </div>

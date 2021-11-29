@@ -1,7 +1,9 @@
 import { useEffect } from 'react'
 import type { ReactElement } from 'react'
 import ResumeLayout from '../../components/layouts/resume/layouts';
+import { useTranslation, Trans } from 'react-i18next';
 const Home = () => {
+  const { t, i18n } = useTranslation();
   useEffect(() => {
     //@ts-ignore
     customScroll();
@@ -16,6 +18,11 @@ const Home = () => {
         <div className="section-content">
           <div className="row">
             <div className="col-xs-12 col-sm-7">
+              <Trans i18nKey="description.part1">
+              </Trans>
+              {/* {t('description.part2')} */}
+              
+              
               <p>Đây là công việc tôi luôn đam mê và muốn theo đuổi, là một lập trình viên có kỹ năng, tôi luôn phấn đấu và cố gắng để phát triển kỹ năng nghề nghiệp, đồng thời luôn muốn học những thứ mới cũng như chuyên sâu về kỹ năng về mảng lập trình Web.</p>
 
               <p>Tinh thần làm việc nhóm trong ngành là rất quan trọng, bạn không thể hoàn thành tốt một dự án khi không có sự cởi mở trong công việc. Trách nhiệm và cái tâm với nghề sẽ thể hiện trong từng dự án cũng như cách bạn làm việc.</p>

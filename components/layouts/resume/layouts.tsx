@@ -1,6 +1,7 @@
 import Header from './header';
 import React, { ReactNode } from 'react';
 import Head from 'next/head'
+import router, { useRouter, Router } from 'next/router'
 import { NextSeo } from 'next-seo';
 import Script from 'next/script'
 import '../../../styles/resumeLayout.module.css';
@@ -14,8 +15,13 @@ interface MyComponentProps extends WithRouterProps { }
 class ResumeDefault extends React.Component<MyComponentProps, { showSpinner: Boolean }> {
     constructor(props: any) {
         super(props);
-    }
+        // console.log(props);
 
+    }
+    componentDidMount() {
+        let abc = router.locale;
+        console.log(abc);
+    }
     render() {
         return (
             <>

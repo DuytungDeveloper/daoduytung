@@ -7,6 +7,8 @@ import { DefaultSeo } from 'next-seo';
 // import type { AppProps } from 'next/app'
 // import Head from 'next/head'
 // import Script from 'next/script'
+// import { use } from 'next/tra'
+import '../i18n';
 
 import { useState, useEffect, useMemo } from 'react';
 import type { ReactElement, ReactNode } from 'react'
@@ -16,6 +18,7 @@ import Router from 'next/router';
 // import Spinner from '../components/spinners/default_spinner'
 import Spinner from '../components/spinners/AutoCloseSpinner'
 import Variant_Helper from '../utils/Variant_Helper'
+import SystemConfig from '../config';
 
 
 import NProgress from 'nprogress'; //nprogress module
@@ -35,12 +38,18 @@ type AppPropsWithLayout = AppProps & {
   Component: NextPageWithLayout
 }
 export default function MyApp({ Component, pageProps, router }: AppPropsWithLayout) {
-  const url = `https://daoduytung.herokuapp.com${router.route}`
-  let [showSpiner, setSpiner] = useState(true);
+  const url = `https://daoduytung.herokuapp.com${router.route}`;
+
+  // const { locale, locales, asPath } = router;
+  // console.log(locale);
+  // const { i18n } = useTranslation();
+  
+  
+  // let [showSpiner, setSpiner] = useState(true);
   let [animation, setAnimation] = useState(Variant_Helper.Arrays[0]);
   let [countTime, setCountTime] = useState(0);
   useEffect(() => {
-    setSpiner(false);
+    // setSpiner(false);
   }, []);
 
   useEffect(() => {
@@ -64,22 +73,22 @@ export default function MyApp({ Component, pageProps, router }: AppPropsWithLayo
       <link rel="manifest" href="/manifest.json" />
       <link rel="stylesheet" href="/assets/css/main.css" type="text/css" />
 
-      <title>Đào Duy Tùng - Software Engineer</title>
+      <title>{SystemConfig.HoTen} - Software Engineer</title>
       <meta name="description" content="Đào Duy Tùng Software Engineer lập trình viên có nhiều kinh nghiệm trong nghề sẽ luôn đồng hành cùng khách hàng và cải thiện trải nghiệm người dùng trên các sản phẩm công nghệ anh làm ra!" />
 
     </Head>
     <DefaultSeo
       titleTemplate="%s | Đào Duy tùng"
-      openGraph={{
-        type: 'website',
-        locale: 'vn_IE',
-        url,
-        description: 'Đào Duy Tùng Software Engineer lập trình viên có nhiều kinh nghiệm trong nghề sẽ luôn đồng hành cùng khách hàng và cải thiện trải nghiệm người dùng trên các sản phẩm công nghệ anh làm ra!',
-        site_name: 'Đào Duy Tùng | Software Engineer',
-        images: [],
-      }}
+      // openGraph={{
+      //   type: 'website',
+      //   locale: 'vi',
+      //   url,
+      //   description: 'Đào Duy Tùng Software Engineer lập trình viên có nhiều kinh nghiệm trong nghề sẽ luôn đồng hành cùng khách hàng và cải thiện trải nghiệm người dùng trên các sản phẩm công nghệ anh làm ra!',
+      //   site_name: 'Đào Duy Tùng | Software Engineer',
+      //   images: [],
+      // }}
     />
-    <Spinner/>
+    <Spinner />
     {getLayout(
       <LazyMotion features={domAnimation}>
         <AnimatePresence
