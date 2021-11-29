@@ -10,7 +10,7 @@ const lngs: any = {
 
 const styles: any = [
     { style: "dark", iconClass: "fas fa-moon", backgroundColor: "darkorchid" },
-    { style: "light", iconClass: "far fa-sun", backgroundColor: "white" },
+    { style: "light", iconClass: "far fa-sun", backgroundColor: "aliceblue" },
 ]
 
 export default function Header(props: any) {
@@ -102,7 +102,7 @@ export default function Header(props: any) {
                             // console.log(x.style)
                             props.setStyle(x.style)
                         }
-                    }} style={{backgroundColor : x.backgroundColor}}>
+                    }} style={{ backgroundColor: x.style == props.style ? "#04b4e0" : "#4d6166" }}>
                         <i className={x.iconClass}></i>
                     </button>
                 ))}

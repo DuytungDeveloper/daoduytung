@@ -18,12 +18,11 @@ class ResumeDefault extends React.Component<MyComponentProps, { style: String }>
         super(props);
         // console.log(props);
         this.state = {
-            style: ""
+            style: "dark"
         }
         this.setStyle = this.setStyle.bind(this);
     }
     setStyle(temp: String) {
-        console.log(temp);
         this.setState({
             style: temp
         })
