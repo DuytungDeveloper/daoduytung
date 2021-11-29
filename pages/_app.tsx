@@ -1,6 +1,8 @@
 import 'owl.carousel/dist/assets/owl.carousel.css';
 import 'owl.carousel/dist/assets/owl.theme.default.css';
-import '../styles/globals.css'
+import '../node_modules/flag-icon-css/css/flag-icons.min.css';
+// import '../styles/globals.css'
+// import '../styles/globals_light.css'
 import Head from 'next/head'
 import { DefaultSeo } from 'next-seo';
 // import  '../styles/ttemplate/main.css'
@@ -8,7 +10,9 @@ import { DefaultSeo } from 'next-seo';
 // import Head from 'next/head'
 // import Script from 'next/script'
 // import { use } from 'next/tra'
-import '../i18n';
+import anyThing from '../i18n';
+// import { useTranslation, Trans } from 'react-i18next';
+
 
 import { useState, useEffect, useMemo } from 'react';
 import type { ReactElement, ReactNode } from 'react'
@@ -39,18 +43,21 @@ type AppPropsWithLayout = AppProps & {
 }
 export default function MyApp({ Component, pageProps, router }: AppPropsWithLayout) {
   const url = `https://daoduytung.herokuapp.com${router.route}`;
+  // const { t, i18n } = anyThing.();
 
-  // const { locale, locales, asPath } = router;
+  const { locale, locales, asPath } = router;
   // console.log(locale);
+
   // const { i18n } = useTranslation();
-  
-  
+
+
   // let [showSpiner, setSpiner] = useState(true);
   let [animation, setAnimation] = useState(Variant_Helper.Arrays[0]);
   let [countTime, setCountTime] = useState(0);
   useEffect(() => {
     // setSpiner(false);
-  }, []);
+    anyThing.changeLanguage(locale)
+  }, [locale]);
 
   useEffect(() => {
     if (countTime < 1)
@@ -79,14 +86,14 @@ export default function MyApp({ Component, pageProps, router }: AppPropsWithLayo
     </Head>
     <DefaultSeo
       titleTemplate="%s | Đào Duy tùng"
-      // openGraph={{
-      //   type: 'website',
-      //   locale: 'vi',
-      //   url,
-      //   description: 'Đào Duy Tùng Software Engineer lập trình viên có nhiều kinh nghiệm trong nghề sẽ luôn đồng hành cùng khách hàng và cải thiện trải nghiệm người dùng trên các sản phẩm công nghệ anh làm ra!',
-      //   site_name: 'Đào Duy Tùng | Software Engineer',
-      //   images: [],
-      // }}
+    // openGraph={{
+    //   type: 'website',
+    //   locale: 'vi',
+    //   url,
+    //   description: 'Đào Duy Tùng Software Engineer lập trình viên có nhiều kinh nghiệm trong nghề sẽ luôn đồng hành cùng khách hàng và cải thiện trải nghiệm người dùng trên các sản phẩm công nghệ anh làm ra!',
+    //   site_name: 'Đào Duy Tùng | Software Engineer',
+    //   images: [],
+    // }}
     />
     <Spinner />
     {getLayout(

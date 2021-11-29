@@ -12,39 +12,35 @@ const Home = () => {
     <>
       <section data-id="about-me" className="animated-section ps ps--theme_default section-active">
         <div className="page-title">
-          <h2>About <span>Me</span></h2>
+          <h2><Trans i18nKey="about.pageTitle.about" /> <span><Trans i18nKey="about.pageTitle.me" /></span></h2>
+          
         </div>
 
         <div className="section-content">
           <div className="row">
             <div className="col-xs-12 col-sm-7">
-              <Trans i18nKey="description.part1">
-              </Trans>
-              {/* {t('description.part2')} */}
-              
-              
-              <p>Đây là công việc tôi luôn đam mê và muốn theo đuổi, là một lập trình viên có kỹ năng, tôi luôn phấn đấu và cố gắng để phát triển kỹ năng nghề nghiệp, đồng thời luôn muốn học những thứ mới cũng như chuyên sâu về kỹ năng về mảng lập trình Web.</p>
+              <p><Trans i18nKey="about.aboutMe.part1" /> </p>
 
-              <p>Tinh thần làm việc nhóm trong ngành là rất quan trọng, bạn không thể hoàn thành tốt một dự án khi không có sự cởi mở trong công việc. Trách nhiệm và cái tâm với nghề sẽ thể hiện trong từng dự án cũng như cách bạn làm việc.</p>
+              <p><Trans i18nKey="about.aboutMe.part2" /></p>
 
-              <p>Không ai là hoàn hảo, vì vậy ta sẽ cần sự nỗ lực từng ngày từng giờ để có thể đạt được thứ ta mong muốn.</p>
+              <p><Trans i18nKey="about.aboutMe.part3" /></p>
             </div>
 
             <div className="col-xs-12 col-sm-5">
               <div className="info-list">
                 <ul>
                   <li>
-                    <span className="title">Tuổi</span>
+                    <span className="title"><Trans i18nKey="about.information.title.tuoi" /></span>
                     <span className="value">{(new Date).getFullYear() - 1996}</span>
                   </li>
 
                   <li>
-                    <span className="title">Nơi cư trú</span>
+                    <span className="title"><Trans i18nKey="about.information.title.noiCuTru" /></span>
                     <span className="value">Việt Nam</span>
                   </li>
 
                   <li>
-                    <span className="title">Địa chỉ</span>
+                    <span className="title"><Trans i18nKey="about.information.title.diaChi" /></span>
                     <span className="value">11 Đường 16, Phướng Phước Long A, TP.Thủ Đức, Việt Nam</span>
                   </li>
 
@@ -54,7 +50,7 @@ const Home = () => {
                   </li>
 
                   <li>
-                    <span className="title">Số điện thoại</span>
+                    <span className="title"><Trans i18nKey="about.information.title.soDienThoai" /></span>
                     <span className="value"><a href="tel:0586571621">0586571621</a></span>
                   </li>
                 </ul>
@@ -67,7 +63,7 @@ const Home = () => {
           <div className="row">
             <div className="col-xs-12 col-sm-12">
               <div className="block-title">
-                <h3>What <span>I Do</span></h3>
+                <h3><Trans i18nKey="about.whatIdo.title.what" /> <span><Trans i18nKey="about.whatIdo.title.iDo" /> </span></h3>
               </div>
             </div>
           </div>
@@ -82,7 +78,7 @@ const Home = () => {
                       <i className="lnr lnr-laptop-phone"></i>
                     </div><div className="ci-text">
                       <h4>Web Developer</h4>
-                      <p>Tạo và xây dựng các hệ thống website có yêu cầu bảo mật cao và tốc độ nhanh dựa trên các công nghệ hiện đại như NodeJS, .NetCore, .NET, RabbitMQ, Kafka, Docker, Redis, .... Cùng với đó là các cơ sở dữ liệu như MSSQL, MongoDB, Elasticsearch. Sử dụng nhiều ngôn ngữ khác nhau để tối ưu hệ thống như Javascript, C#, Python, Golang, ...</p>
+                      <p><Trans i18nKey="about.whatIdo.web.info" /> </p>
                     </div>
                   </div>
                   <div className="info-block-w-icon">
@@ -90,8 +86,8 @@ const Home = () => {
                       <i className="lnr lnr-store"></i>
                     </div>
                     <div className="ci-text">
-                      <h4>Thương mại điện tử</h4>
-                      <p>Có kinh nghiệm trong việc xây dựng, cấu trúc, tối ưu các hệ thống thương mại điện tử lớn nhỏ dựa trên các công nghệ khác nhau</p>
+                      <h4><Trans i18nKey="about.whatIdo.thuongMaiDienTu.title" /></h4>
+                      <p><Trans i18nKey="about.whatIdo.thuongMaiDienTu.info" /></p>
                     </div>
                   </div>
                 </div>
@@ -106,16 +102,16 @@ const Home = () => {
                       <i className="lnr lnr-pencil"></i>
                     </div>
                     <div className="ci-text">
-                      <h4>Sáng tạo nội dung</h4>
-                      <p>Xây dựng các phần mềm, API và các công cụ hỗ trợ theo yêu cầu của khách hàng. Quản lý fanpage, nhập văn bản dữ liệu, thu thập dữ liệu các website, làm tool chức năng cho Chrome theo yêu cầu của khách hàng.  Đưa ra các ý tưởng cũng như cải thiện sản phẩm dự án , tối ưu nhất đối với các hệ thống cũng như luồng công việc thuận tiện cho các bộ phận khác như Sale, CS, ban quản lý , ban giám đốc có thể theo dõi sát sao công việc cũng như hệ thống của khách hàng.</p>
+                      <h4><Trans i18nKey="about.whatIdo.sangTaoNoiDung.title" /></h4>
+                      <p><Trans i18nKey="about.whatIdo.sangTaoNoiDung.info" /></p>
                     </div>
                   </div>
                   <div className="info-block-w-icon">
                     <div className="ci-icon">
                       <i className="lnr lnr-flag"></i>
                     </div><div className="ci-text">
-                      <h4>Quản lý</h4>
-                      <p>Tư vấn hộ trợ và quản lý các đội nhóm lập trình giúp các doanh nghiệp vừa và nhỏ có cái nhìn tổng quan về công việc cũng như tránh hao hụt dòng tiền khi quản lý và xây dựng.</p>
+                      <h4><Trans i18nKey="about.whatIdo.quanLy.title" /></h4>
+                      <p><Trans i18nKey="about.whatIdo.quanLy.info" /></p>
                     </div>
                   </div>
                 </div>

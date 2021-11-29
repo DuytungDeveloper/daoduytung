@@ -1,13 +1,17 @@
-import React, { Suspense, lazy } from 'react';
+import React, { Suspense, lazy, useEffect } from 'react';
 import Link from 'next/link';
 import Img from 'next/image';
 import { useRouter } from "next/router";
 import { useTranslation, Trans } from 'react-i18next';
 const lngs: any = {
-    en: { nativeName: 'English' },
-    vi: { nativeName: 'Việt' }
+    en: { nativeName: 'English', iconClass: "flag-icon flag-icon-us" },
+    vi: { nativeName: 'Việt Nam', iconClass: "flag-icon flag-icon-vn" }
 };
 
+const styles: any = [
+    { style: "dark", iconClass: "fas fa-moon", backgroundColor: "darkorchid" },
+    { style: "light", iconClass: "far fa-sun", backgroundColor: "white" },
+]
 
 export default function Header(props: any) {
     const { t, i18n } = useTranslation();
@@ -16,32 +20,32 @@ export default function Header(props: any) {
         {
             href: "/",
             iconClass: "menu-icon lnr lnr-home",
-            name: "Trang chủ"
+            name: t("menu.home")
         },
         {
             href: "/about",
             iconClass: "menu-icon lnr lnr-user",
-            name: "Thông tin"
+            name: t("menu.about")
         },
         {
             href: "/resume",
             iconClass: "menu-icon lnr lnr-graduation-hat",
-            name: "Resume"
+            name: t("menu.resume")
         },
         {
             href: "/portfolio",
             iconClass: "menu-icon lnr lnr-briefcase",
-            name: "Hoạt động"
+            name: t("menu.portfolio")
         },
         {
             href: "/blog",
             iconClass: "menu-icon lnr lnr-book",
-            name: "Blog"
+            name: t("menu.blog")
         },
         {
             href: "/contact",
             iconClass: "menu-icon lnr lnr-envelope",
-            name: "Liên hệ"
+            name: t("menu.contact")
         },
     ];
     const router = useRouter();
@@ -63,6 +67,9 @@ export default function Header(props: any) {
             </li >
         );
     }
+    useEffect(() => {
+
+    }, [])
     return (
         <header id="site_header" className="header mobile-menu-hide">
             <div className="header-content">
@@ -70,20 +77,33 @@ export default function Header(props: any) {
                     <img src="/assets/img/main_photo.jpg" alt="Đào Duy Tùng Software Engineer, dao duy tung, duy tung, Web Developer, Developer" loading={'lazy'} />
                 </div>
                 <div className="header-titles">
-                    <h1>Đào Duy Tùng</h1>
+                    <h2>Đào Duy Tùng</h2>
                     <h4>Web Developer</h4>
                 </div>
             </div>
 
             <ul className="main-menu">
                 {allRouter}
-                {locale}
-
+                {/* {locale} */}
+                <br />
                 {Object.keys(lngs).map((lng: any) => (
-                    <button key={lng} style={{ fontWeight: i18n.resolvedLanguage === lng ? 'bold' : 'normal' }} type="submit" onClick={() => i18n.changeLanguage(lng, (err, t) => {
+                    <button className="btn" key={lng} style={{ fontWeight: i18n.resolvedLanguage === lng ? 'bold' : 'normal', backgroundColor: router.locale === lng ? "#04b4e0" : "transparent", borderColor: router.locale === lng ? "#04b4e0" : 'transparent' }} type="submit" onClick={() => i18n.changeLanguage(lng, (err, t) => {
                         router.locale = lng;
                     })}>
-                        {lngs[lng].nativeName}
+                        {/* {lngs[lng].nativeName} */}
+                        <i className={lngs[lng].iconClass} style={{ margin: 0 }}></i>
+                        {/* <span className="flag-icon flag-icon-gr"></span> */}
+                    </button>
+                ))}
+                <hr />
+                {styles.map((x: any, i: any) => (
+                    <button className="btn" key={i} onClick={() => {
+                        if (props.setStyle) {
+                            // console.log(x.style)
+                            props.setStyle(x.style)
+                        }
+                    }} style={{backgroundColor : x.backgroundColor}}>
+                        <i className={x.iconClass}></i>
                     </button>
                 ))}
                 {/* <li className="">
@@ -109,7 +129,11 @@ export default function Header(props: any) {
             </div>
 
             <div className="header-buttons">
-                <a href="#" target="_blank" className="btn btn-primary">Download CV</a>
+                <a href="#" target="_blank" className="btn btn-primary">
+                    <Trans i18nKey="downloadCV" />
+                    {/* Download CV */}
+
+                </a>
             </div>
 
             <div className="copyrights">© {(new Date).getFullYear()} All rights reserved.</div>

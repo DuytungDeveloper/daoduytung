@@ -3,9 +3,14 @@ import ReCAPTCHA from "react-google-recaptcha";
 import axios from 'axios';
 import type { ReactElement } from 'react'
 import ResumeLayout from '../../components/layouts/resume/layouts';
-import { FormEventHandler } from 'react-google-recaptcha/node_modules/@types/react';
 import toast, { Toaster } from 'react-hot-toast';
+import { useTranslation, Trans } from 'react-i18next';
 const Home = () => {
+  useEffect(() => {
+    //@ts-ignore
+    customScroll();
+  }, [])
+  const { t, i18n } = useTranslation();
   let [fullName, setFullName] = useState('');
   let [email, setEmail] = useState('');
   let [subject, setSubject] = useState('');
@@ -53,7 +58,7 @@ const Home = () => {
       />
       <section data-id="contact" className="animated-section  ps ps--theme_default section-active">
         <div className="page-title">
-          <h2>Contact</h2>
+          <h2><Trans i18nKey="contact.title" /></h2>
         </div>
 
         <div className="section-content">
@@ -114,7 +119,7 @@ const Home = () => {
                 <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d411.92555498434587!2d106.76793336981561!3d10.817556050530662!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x6a0c0db230682956!2zMTDCsDQ5JzAzLjMiTiAxMDbCsDQ2JzA1LjQiRQ!5e0!3m2!1sen!2s!4v1638118552503!5m2!1sen!2s" width="100%" height="auto" allowFullScreen={true} loading="lazy"></iframe>
               </div>
               <div className="block-title">
-                <h3>How Can I <span>Help You?</span></h3>
+                <h3><Trans i18nKey="contact.howCanI" /> <span><Trans i18nKey="contact.helpYou" /></span></h3>
               </div>
 
               <form className="contact-form" method="post" onSubmit={onSubmit}>
@@ -126,21 +131,21 @@ const Home = () => {
                     <div className="left-column">
                       <div className={fullName != '' ? 'form-group form-group-with-icon form-group-focus' : 'form-group form-group-with-icon'} >
                         <input value={fullName} onChange={(event) => { setFullName(event.target.value); }} type="text" name="name" className="form-control" placeholder="" required data-error="Name is required." />
-                        <label>Full Name</label>
+                        <label><Trans i18nKey="contact.fullName" /></label>
                         <div className="form-control-border"></div>
                         <div className="help-block with-errors"></div>
                       </div>
 
                       <div className={email != '' ? 'form-group form-group-with-icon form-group-focus' : 'form-group form-group-with-icon'} >
                         <input value={email} onChange={(event) => { setEmail(event.target.value); }} type="email" name="email" className="form-control" placeholder="" required data-error="Valid email is required." />
-                        <label>Email Address</label>
+                        <label><Trans i18nKey="contact.email" /></label>
                         <div className="form-control-border"></div>
                         <div className="help-block with-errors"></div>
                       </div>
 
                       <div className={subject != '' ? 'form-group form-group-with-icon form-group-focus' : 'form-group form-group-with-icon'} >
                         <input value={subject} onChange={(event) => { setSubject(event.target.value); }} type="text" name="subject" className="form-control" placeholder="" required data-error="Subject is required." />
-                        <label>Subject</label>
+                        <label><Trans i18nKey="contact.subject" /></label>
                         <div className="form-control-border"></div>
                         <div className="help-block with-errors"></div>
                       </div>
@@ -148,7 +153,7 @@ const Home = () => {
                     <div className="right-column">
                       <div className={message != '' ? 'form-group form-group-with-icon form-group-focus' : 'form-group form-group-with-icon'} >
                         <textarea value={message} onChange={(event) => { setMessage(event.target.value); }} name="message" className="form-control" placeholder="" rows={7} required data-error="Please, leave me a message."></textarea>
-                        <label>Message</label>
+                        <label><Trans i18nKey="contact.message" /></label>
                         <div className="form-control-border"></div>
                         <div className="help-block with-errors"></div>
                       </div>
@@ -161,7 +166,7 @@ const Home = () => {
                     // size="invisible"
                     sitekey="6Lewe2UdAAAAAMiL0cjDUyutcKMymv20sHOQuaS2"
                   />
-                  <input type="submit" className="button btn-send" value="Send message" />
+                  <input type="submit" className="button btn-send" value={t("contact.sendMessage").toString()} />
                 </div>
               </form>
             </div>

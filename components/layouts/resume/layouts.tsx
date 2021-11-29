@@ -5,6 +5,7 @@ import router, { useRouter, Router } from 'next/router'
 import { NextSeo } from 'next-seo';
 import Script from 'next/script'
 import '../../../styles/resumeLayout.module.css';
+// import '../../../styles/resumeLayout_light.module.css';
 interface WithRouterProps {
     children?: ReactNode,
     title?: string
@@ -12,21 +13,34 @@ interface WithRouterProps {
 }
 
 interface MyComponentProps extends WithRouterProps { }
-class ResumeDefault extends React.Component<MyComponentProps, { showSpinner: Boolean }> {
+class ResumeDefault extends React.Component<MyComponentProps, { style: String }> {
     constructor(props: any) {
         super(props);
         // console.log(props);
-
+        this.state = {
+            style: ""
+        }
+        this.setStyle = this.setStyle.bind(this);
+    }
+    setStyle(temp: String) {
+        console.log(temp);
+        this.setState({
+            style: temp
+        })
     }
     componentDidMount() {
-        let abc = router.locale;
-        console.log(abc);
+        // let abc = router.locale;
+        // console.log(abc);
     }
     render() {
         return (
             <>
                 <NextSeo title={this.props.title} description={this.props.description} openGraph={{ title: this.props.title, description: this.props.description }} />
                 <Head>
+                    {/* <link
+                        href="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/3.10.0/mdb.min.css"
+                        rel="stylesheet"
+                    /> */}
                     <link rel="stylesheet" href="/assets/css/reset.css" type="text/css" />
                     <link rel="stylesheet" href="/assets/css/bootstrap-grid.min.css" type="text/css" />
                     <link rel="stylesheet" href="/assets/css/animations.css" type="text/css" />
@@ -35,11 +49,17 @@ class ResumeDefault extends React.Component<MyComponentProps, { showSpinner: Boo
                     <link rel="stylesheet" href="/assets/css/magnific-popup.css" type="text/css" />
                     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css" />
                     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css" integrity="sha384-zCbKRCUGaJDkqS1kPbPd7TveP5iyJE0EjAuZQTgFLD2ylzuqKfdKlfG/eSrtxUkn" crossOrigin="anonymous"></link>
+
+
+                    {/* <link rel="stylesheet" href="/assets/css/main_light.css" type="text/css" /> */}
+                    <link rel="stylesheet" href={this.state.style == "light" ? "/assets/css/main_light.css" : "/assets/css/main.css"} type="text/css" />
+
+
                 </Head>
                 <div className="page">
                     <div className="page-content">
 
-                        <Header />
+                        <Header style={this.state.style} setStyle={this.setStyle} />
 
                         <div className="menu-toggle">
                             <span></span>

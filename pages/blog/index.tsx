@@ -1,6 +1,8 @@
 import type { ReactElement } from 'react'
 import ResumeLayout from '../../components/layouts/resume/layouts';
+import { useTranslation, Trans } from 'react-i18next';
 const Home = () => {
+  const { t, i18n } = useTranslation();
   return (
     <>
       <section className="animated-section ps ps--theme_default section-active">
@@ -9,7 +11,7 @@ const Home = () => {
           <div className="row">
             <div className="col-sm-12 col-md-12 col-lg-12">
               <div className="title-block">
-                <h2>Chức năng sẽ sớm ra mắt</h2>
+                <h2><Trans i18nKey="blog.alert" /></h2>
               </div>
             </div>
           </div>
