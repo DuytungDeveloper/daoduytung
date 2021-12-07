@@ -36,7 +36,7 @@ i18n
                             me: "tôi"
                         },
                         aboutMe: {
-                            part1: `Đây là công việc tôi luôn đam mê và muốn theo đuổi, là một lập trình viên có kỹ năng, tôi luôn phấn đấu và cố gắng để phát triển kỹ năng nghề nghiệp, đồng thời luôn muốn học những thứ mới cũng như chuyên sâu về kỹ năng về mảng lập trình Web.`,
+                            part1: `Đây là công việc tôi luôn đam mê và muốn theo đuổi, là một lập trình viên có kỹ năng, tôi luôn phấn đấu và cố gắng để trở thành kỹ sư lành nghề, đồng thời luôn muốn học những thứ mới cũng như chuyên sâu về lập trình hệ thống lớn.`,
                             part2: "Tinh thần làm việc nhóm trong ngành là rất quan trọng, bạn không thể hoàn thành tốt một dự án khi không có sự cởi mở trong công việc. Trách nhiệm và cái tâm với nghề sẽ thể hiện trong từng dự án cũng như cách bạn làm việc.",
                             part3: "Không ai là hoàn hảo, vì vậy ta sẽ cần sự nỗ lực từng ngày từng giờ để có thể đạt được thứ ta mong muốn."
                         },
@@ -67,7 +67,7 @@ i18n
                             },
                             quanLy: {
                                 title: "Quản lý",
-                                info: "Tư vấn hộ trợ và quản lý các đội nhóm lập trình giúp các doanh nghiệp vừa và nhỏ có cái nhìn tổng quan về công việc cũng như tránh hao hụt dòng tiền khi quản lý và xây dựng."
+                                info: "Tư vấn hỗ trợ và quản lý các đội nhóm lập trình giúp các doanh nghiệp vừa và nhỏ có cái nhìn tổng quan về công việc cũng như tránh hao hụt dòng tiền khi quản lý và xây dựng."
                             }
                         }
                     },
@@ -227,7 +227,7 @@ i18n
                             me: "Me"
                         },
                         aboutMe: {
-                            part1: `This is a job I have always been passionate about and want to pursue, as a skilled programmer, I am always striving and trying to develop my professional skills, and always want to learn new things as well as specialize in Web programming skills.`,
+                            part1: `This is the job I have always been passionate about and want to pursue, as a skilled programmer, I always strive and try to become a skilled engineer, and always want to learn new things as well as specialize in the field large system programming.`,
                             part2: "The spirit of teamwork in the industry is very important, you cannot complete a project well without openness in work. Responsibility and passion for the profession will show in each project as well as the way you work.",
                             part3: "No one is perfect, so we will need to work every day to get what we want."
                         },
@@ -258,7 +258,7 @@ i18n
                             },
                             quanLy: {
                                 title: "Manage",
-                                info: "Consulting, support and management of programming teams helps small and medium enterprises have an overview of the work as well as avoid loss of cash flow when managing and building."
+                                info: "Consulting, support and management of programming teams helps small and medium businesses have an overview of the work as well as avoid loss of cash flow when managing and building."
                             }
                         }
                     },

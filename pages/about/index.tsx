@@ -13,7 +13,7 @@ const Home = () => {
       <section data-id="about-me" className="animated-section ps ps--theme_default section-active">
         <div className="page-title">
           <h2><Trans i18nKey="about.pageTitle.about" /> <span><Trans i18nKey="about.pageTitle.me" /></span></h2>
-          
+
         </div>
 
         <div className="section-content">
@@ -41,15 +41,15 @@ const Home = () => {
 
                   <li>
                     <span className="title"><Trans i18nKey="about.information.title.diaChi" /></span>
-                    <span className="value">11 Đường 16, Phướng Phước Long A, TP.Thủ Đức, Việt Nam</span>
+                    <span className="value">11 Đường 16, Phường Phước Long A, TP.Thủ Đức, Việt Nam</span>
                   </li>
 
-                  <li>
-                    <span className="title">e-mail</span>
+                  <li style={{ overflowWrap: "break-word" }}>
+                    <span className="title">eMail</span>
                     <span className="value">duytung.developer@gmail.com</span>
                   </li>
 
-                  <li>
+                  <li  style={{ overflowWrap: "break-word" }}>
                     <span className="title"><Trans i18nKey="about.information.title.soDienThoai" /></span>
                     <span className="value"><a href="tel:0586571621">0586571621</a></span>
                   </li>

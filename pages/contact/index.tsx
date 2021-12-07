@@ -67,7 +67,7 @@ const Home = () => {
             <div className="col-xs-12 col-sm-4">
               <div className="lm-info-block gray-default">
                 <i className="lnr lnr-map-marker"></i>
-                <h4>Viêt Nam</h4>
+                <h4>Việt Nam</h4>
                 <span className="lm-info-block-value"></span>
                 <span className="lm-info-block-text"></span>
               </div>
