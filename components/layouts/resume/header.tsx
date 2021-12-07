@@ -87,24 +87,30 @@ export default function Header(props: any) {
                 {/* {locale} */}
                 <br />
                 {Object.keys(lngs).map((lng: any) => (
-                    <button className="btn" key={lng} style={{ fontWeight: i18n.resolvedLanguage === lng ? 'bold' : 'normal', backgroundColor: router.locale === lng ? "#04b4e0" : "transparent", borderColor: router.locale === lng ? "#04b4e0" : 'transparent' }} type="submit" onClick={() => i18n.changeLanguage(lng, (err, t) => {
-                        router.locale = lng;
-                    })}>
-                        {/* {lngs[lng].nativeName} */}
-                        <i className={lngs[lng].iconClass} style={{ margin: 0 }}></i>
-                        {/* <span className="flag-icon flag-icon-gr"></span> */}
-                    </button>
+                    <>
+                        <button className="btn" key={lng} style={{ fontWeight: i18n.resolvedLanguage === lng ? 'bold' : 'normal', backgroundColor: router.locale === lng ? "#04b4e0" : "transparent", borderColor: router.locale === lng ? "#04b4e0" : 'transparent' }} type="submit" onClick={() => i18n.changeLanguage(lng, (err, t) => {
+                            router.locale = lng;
+                        })}>
+                            {/* {lngs[lng].nativeName} */}
+                            <i className={lngs[lng].iconClass} style={{ margin: 0 }}></i>
+                            {/* <span className="flag-icon flag-icon-gr"></span> */}
+                        </button>
+                        <br />
+                    </>
                 ))}
-                <hr />
                 {styles.map((x: any, i: any) => (
-                    <button className="btn" key={i} onClick={() => {
-                        if (props.setStyle) {
-                            // console.log(x.style)
-                            props.setStyle(x.style)
-                        }
-                    }} style={{ backgroundColor: x.style == props.style ? "#04b4e0" : "#4d6166" }}>
-                        <i className={x.iconClass}></i>
-                    </button>
+                    <>
+                        <button className="btn" key={i} onClick={() => {
+                            if (props.setStyle) {
+                                // console.log(x.style)
+                                props.setStyle(x.style)
+                            }
+                        }} style={{ backgroundColor: x.style == props.style ? "#04b4e0" : "#4d6166" }}>
+                            <i className={x.iconClass}></i>
+                        </button>
+                        <br />
+                    </>
+
                 ))}
                 {/* <li className="">
                     <Link href="" locale={locale}>
