@@ -135,7 +135,7 @@ export default function Header(props: any) {
             </div>
 
             <div className="header-buttons">
-                <a href="#" target="_blank" className="btn btn-primary">
+                <a href="https://i.topcv.vn/daoduytung?ref=2676236" target="_blank" className="btn btn-primary">
                     <Trans i18nKey="downloadCV" />
                     {/* Download CV */}
 
