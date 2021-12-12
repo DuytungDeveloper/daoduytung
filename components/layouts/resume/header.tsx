@@ -54,7 +54,7 @@ export default function Header(props: any) {
     for (let i = 0; i < defaultMenu.length; i++) {
         const menu = defaultMenu[i];
         allRouter.push(
-            <li className={router.pathname == menu.href ? "active" : ""} key={i}>
+            <li className={router.pathname == menu.href ? "active" : ""} key={"menu_key_"+i}>
                 {/* <Link href={locale == defaultLocale ? menu.href : locale + menu.href} locale={false}> */}
                 <Link href={menu.href} locale={locale}>
                     {/* <Link href={menu.href} locale="en"> */}
@@ -135,7 +135,7 @@ export default function Header(props: any) {
             </div>
 
             <div className="header-buttons">
-                <a href="https://i.topcv.vn/daoduytung?ref=2676236" target="_blank" className="btn btn-primary">
+                <a href="https://i.topcv.vn/daoduytung?ref=2676236" target="_blank" rel="noreferrer" className="btn btn-primary">
                     <Trans i18nKey="downloadCV" />
                     {/* Download CV */}
 
