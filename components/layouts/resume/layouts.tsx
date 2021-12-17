@@ -83,6 +83,8 @@ class ResumeDefault extends React.Component<MyComponentProps, { style: String }>
                 </div>
 
 
+                {/* <Script src="https://www.googletagmanager.com/gtag/js?id=G-T187WL629K" async defer></Script> */}
+                <Script src="https://www.googletagmanager.com/gtag/js?id=UA-215588434-1" async defer></Script>
                 <Script src="https://www.google.com/recaptcha/api.js" async defer></Script>
                 <Script src="/assets/js/jquery-2.1.3.min.js" strategy={'beforeInteractive'} ></Script>
                 <Script src="/assets/js/modernizr.custom.js" strategy={'beforeInteractive'}  ></Script>

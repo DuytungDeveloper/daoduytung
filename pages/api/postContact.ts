@@ -67,7 +67,7 @@ export default async function handler(
         return res.status(200).json(result);
       }
       //#region  Check Capcha
-      let secret_key = '6Lewe2UdAAAAAJJsgmfRCmApJO0Oo-t7kPwiiEqH';
+      let secret_key = '6LdvbqsdAAAAAGMi-vYK8kGzLCHUhfclXccuAsKN';
       const url = `https://www.google.com/recaptcha/api/siteverify?secret=${secret_key}&response=${data.token}`;
       try {
         let responseGoogle = await axios.post(url);

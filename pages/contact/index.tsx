@@ -164,7 +164,7 @@ const Home = () => {
                   <ReCAPTCHA
                     ref={recaptchaRef}
                     // size="invisible"
-                    sitekey="6Lewe2UdAAAAAMiL0cjDUyutcKMymv20sHOQuaS2"
+                    sitekey="6LdvbqsdAAAAAF1O7pp79D5dgNjok1A1HQv9EUuy"
                   />
                   <input type="submit" className="button btn-send" value={t("contact.sendMessage").toString()} />
                 </div>
