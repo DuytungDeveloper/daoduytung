@@ -32,4 +32,4 @@ User-agent: yahoo-blogs/v3.9
 Disallow: 
 User-agent: *
 Disallow: 
-Sitemap: https://daoduytung.herokuapp.com/sitemap.xml
+Sitemap: https://duytung-developer.xyz/sitemap.xml
