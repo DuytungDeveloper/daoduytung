@@ -5,7 +5,8 @@ import { useTranslation, Trans } from 'react-i18next';
 
 interface DetailViewSkill {
   name: string,
-  percent: string
+  percent: string,
+  title: string
 }
 interface SkillData {
   name: string,
@@ -20,95 +21,113 @@ const ViewSkill = () => {
       detail: [
         {
           name: "JavaScript",
-          percent: '85%'
+          percent: '85%',
+          title: '3 Year'
         },
         {
           name: "C#",
-          percent: '85%'
+          percent: '85%',
+          title: '3 Year'
         },
         {
           name: "Python",
-          percent: '70%'
+          percent: '30%',
+          title: '0.5 Year'
         },
         {
           name: "Golang",
-          percent: '60%'
+          percent: '30%',
+          title: '0.5 Year'
         },
         {
           name: "PHP",
-          percent: '40%'
+          percent: '40%',
+          title: '0.3 Year'
         },
         {
           name: "ReactJS",
-          percent: '80%'
+          percent: '80%',
+          title: '1 Year'
         },
         {
           name: "HTML/CSS",
-          percent: '85%'
+          percent: '85%',
+          title: '2 Year'
         },
         {
           name: "Angular",
-          percent: '50%'
+          percent: '50%',
+          title: '1 Year'
         },
       ]
     },
     {
-      name:  t('resume.codeManager'),
+      name: t('resume.codeManager'),
       detail: [
         {
           name: "GIT",
-          percent: '80%'
+          percent: '80%',
+          title: 'Always'
         },
         {
           name: "SVN",
-          percent: '70%'
+          percent: '70%',
+          title: '2 Year'
         },
       ]
     },
     {
-      name:  t('resume.codeEditor'),
+      name: t('resume.codeEditor'),
       detail: [
         {
           name: "Visual Studio",
-          percent: '80%'
+          percent: '80%',
+          title: 'Most Of Time'
         },
         {
           name: "Visual Studio Code",
-          percent: '90%'
+          percent: '90%',
+          title: 'Always'
         },
       ]
     },
     {
-      name:  t('resume.test'),
+      name: t('resume.test'),
       detail: [
         {
           name: "UnitTest",
-          percent: '80%'
+          percent: '80%',
+          title: 'Always'
         },
         {
           name: "Jmeter",
-          percent: '75%'
+          percent: '75%',
+          title: '2 Year'
         },
       ]
     },
     {
-      name:  t('resume.congNghe'),
+      name: t('resume.congNghe'),
       detail: [
         {
           name: "Redis",
-          percent: '80%'
+          percent: '80%',
+          title: '2 Year'
         },
         {
           name: "RabbitMQ",
-          percent: '78%'
+          percent: '80%',
+          title: '2 Year'
         },
         {
           name: "Kafka",
-          percent: '70%'
+          percent: '50%',
+          title: '1 Year'
         },
         {
           name: "Docker",
-          percent: '80%'
+          percent: '80%',
+          title: '1 Year'
         },
 
       ]
@@ -118,15 +137,18 @@ const ViewSkill = () => {
       detail: [
         {
           name: "MSSQL",
-          percent: '85%'
+          percent: '85%',
+          title: '3 Year'
         },
         {
           name: "MongoDB",
-          percent: '88%'
+          percent: '88%',
+          title: '3 Year'
         },
         {
           name: "Clickhouse",
-          percent: '70%'
+          percent: '40%',
+          title: '0.5 Year'
         },
       ]
     },
@@ -135,11 +157,13 @@ const ViewSkill = () => {
       detail: [
         {
           name: "Window",
-          percent: '80%'
+          percent: '80%',
+          title: 'Always'
         },
         {
           name: "Linux/Ubuntu",
-          percent: '70%'
+          percent: '70%',
+          title: '2 Year'
         },
       ]
     },
@@ -148,7 +172,8 @@ const ViewSkill = () => {
       detail: [
         {
           name: "Bootstrap",
-          percent: '80%'
+          percent: '80%',
+          title: '2 Year'
         }
       ]
     },
@@ -157,23 +182,28 @@ const ViewSkill = () => {
       detail: [
         {
           name: "English",
-          percent: '60%'
+          percent: '50%',
+          title: '50%'
         },
         {
           name: "Communicate",
-          percent: '88%'
+          percent: '88%',
+          title: '88%'
         },
         {
           name: "Manager",
-          percent: '70%'
+          percent: '70%',
+          title: '70%'
         },
         {
           name: "Trainning",
-          percent: '78%'
+          percent: '78%',
+          title: '78%'
         },
         {
           name: "Google Search",
-          percent: '80%'
+          percent: '80%',
+          title: '80%'
         },
 
       ]
@@ -203,7 +233,7 @@ const ViewSkill = () => {
               <div key={j}>
                 <div className="skill clearfix" >
                   <h4 about={detail.name} aria-label={detail.name} >{detail.name}</h4>
-                  <div className="skill-value">{detail.percent}</div>
+                  <div className="skill-value">{detail.title ? detail.title : detail.percent}</div>
                 </div>
                 <div className="skill-container">
                   <div className="skill-percentage" style={{ width: detail.percent }}></div>
@@ -272,7 +302,7 @@ const Home = () => {
                   <div className="divider"></div>
                   <div className="right-part">
                     <h4 className="item-title"><Trans i18nKey="resume.congNghePhanMem.title" /></h4>
-                    <p><Trans i18nKey="resume.congNghePhanMem.title" /></p>
+                    <p><Trans i18nKey="resume.congNghePhanMem.info" /></p>
                   </div>
                 </div>
 
@@ -303,7 +333,7 @@ const Home = () => {
                     <p><Trans i18nKey="resume.kinhNghiem.vihat.part8" /></p>
                     <p><Trans i18nKey="resume.kinhNghiem.vihat.part9" /></p>
                     <p><Trans i18nKey="resume.kinhNghiem.vihat.part10" /></p>
-                   
+
                   </div>
                 </div>
 
